@@ -1,0 +1,56 @@
+/* --- CUSTOM PAGES STYLING (Dark Mode Compatible) --- */
+
+/* Main Container */
+.CustomPage-container {
+    max-width: 950px;
+    margin: 40px auto;
+    font-family: system-ui, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color); /* Adapts to theme */
+  }
+  
+  /* Page Headers */
+  .CustomPage-header {
+    border-bottom: 3px solid var(--primary-color, #4CAF50); /* Defaults to green, or theme primary */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+  }
+  /* Header Color Variants */
+  .CustomPage-header.is-red { border-bottom-color: #f44336; }
+  .CustomPage-header.is-green { border-bottom-color: #4CAF50; }
+  
+  /* Content Cards */
+  .CustomPage-card {
+    background: var(--control-bg); /* Crucial: Changes from light gray to dark gray automatically */
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 5px solid transparent;
+  }
+  
+  /* Card Color Variants */
+  .CustomPage-card.is-red { border-left-color: #f44336; }
+  .CustomPage-card.is-orange { border-left-color: #ff9800; }
+  .CustomPage-card.is-blue { border-left-color: #2196F3; }
+  .CustomPage-card.is-purple { border-left-color: #9c27b0; }
+  .CustomPage-card.is-green { border-left-color: #4caf50; }
+  .CustomPage-card.is-grey { border-left-color: #607d8b; }
+  .CustomPage-card.is-brown { border-left-color: #795548; }
+  .CustomPage-card.is-indigo { border-left-color: #3f51b5; }
+  .CustomPage-card.is-teal { border-left-color: #009688; }
+  
+  /* Links inside cards */
+  .CustomPage-card a {
+    color: var(--link-color);
+    font-weight: bold;
+  }
+  
+  /* Horizontal Rule */
+  .CustomPage-hr {
+    margin: 40px 0;
+    opacity: 0.2;
+    border: 0;
+    border-top: 1px solid var(--text-color);
+  }
