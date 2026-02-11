@@ -1,0 +1,65 @@
+/* Neon Chat – Use forum primary button styling */
+.NeonChat-toggle,
+.NeonChat-send,
+.NeonChat-header {
+  --button-color: var(--button-primary-color) !important;
+  --button-bg: var(--button-primary-bg) !important;
+  --button-bg-hover: var(--button-primary-bg-hover) !important;
+  --button-bg-active: var(--button-primary-bg-active) !important;
+}
+
+/* Neon Chat toggle glow pulse */
+.NeonChat-toggle {
+    position: relative;
+  }
+  
+  .NeonChat-toggle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 var(--button-primary-bg);
+    animation: NeonChat-Pulse 3s infinite ease-out;
+    pointer-events: none;
+  }
+  
+  @keyframes NeonChat-Pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 200, 0, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(0, 200, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 200, 0, 0);
+    }
+  }
+  
+
+  /* Chat message bubbles */
+.NeonChat-message {
+    border-radius: 12px !important;
+    transition: all .2s ease-in-out;
+  }
+  
+  .NeonChat-message:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Neon Chat user online indicator */
+.NeonChat-user.online::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--online-user-circle-color);
+    box-shadow: 0 0 0 0 var(--online-user-circle-color);
+    animation: Flarum-Online-Dot 3s infinite ease-out;
+  }
+  
+  .NeonChat {
+    backdrop-filter: blur(10px);
+    background: rgba(20, 20, 25, 0.85) !important;
+  }
+  

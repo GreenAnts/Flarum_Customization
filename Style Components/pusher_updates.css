@@ -1,0 +1,7 @@
+.DiscussionList-update {
+    --button-color: var(--button-primary-color) !important;
+    --button-bg: var(--button-primary-bg) !important;
+    --button-bg-hover: var(--button-primary-bg-hover) !important;
+    --button-bg-active: var(--button-primary-bg-active) !important;
+    --button-bg-disabled: var(--button-primary-bg-disabled) !important;
+    }

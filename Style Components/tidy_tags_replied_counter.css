@@ -1,0 +1,25 @@
+/*Neatly Display "Tags & Reply" counter on Flarum by Wellwisher - START*/
+@media (min-width: 768px) {
+    .IndexPage .DiscussionListItem-info > .item-tags, 
+    .UserPage .DiscussionListItem-info > .item-tags {
+      left:78%!important;
+      max-width: 250px!important;
+      overflow: visible !important;
+      transition: max-width .2s ease-in-out,-webkit-mask-image .2s!important;
+    }
+    .DiscussionListItem-count {
+      margin: 12px 200px 0 0!important;
+      padding-left: 21px!important;
+      position: absolute!important;
+      left:71%!important;
+    }
+    .TagsLabel {
+      z-index: 2!important;
+      position: relative!important;
+    } 
+    .IndexPage .DiscussionListItem-info>.item-tags, .UserPage .DiscussionListItem-info>.item-tags {
+      right:-100px!important;
+     -webkit-mask-image: linear-gradient(to right, #000 195px, rgba(0,0,0,0) 210px)!important;  
+  }
+  }
+  /*Neatly Display "Tags & Reply" counter on Flarum by Wellwisher - END*/

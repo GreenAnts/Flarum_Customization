@@ -1,0 +1,25 @@
+/* CSS Containment */
+/* Learn more about CSS Containment here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment */
+.PostStream-item,
+.PostsUserPage-list > li,
+.DiscussionList-discussions > li {
+    &:not(:hover) {
+        contain: content;
+        content-visibility: auto;
+        contain-intrinsic-height: auto 300px;
+    }
+}
+
+.DiscussionList-discussions > li {
+    contain-intrinsic-height: auto 300px;
+}
+
+.PostStream-item,
+.PostsUserPage-list > li,
+.DiscussionList-discussions > li {
+    &:has(.open .dropdown-menu) {
+        contain: initial;
+        content-visibility: initial;
+        contain-intrinsic-height: initial;
+    }
+}

@@ -1,0 +1,50 @@
+/* Group Badges */
+/* Desktop */
+@media (min-width: 768px) {
+    .PostUser-badges {
+    float: none;
+    position: relative;
+    margin-left: 15px;
+    width: auto;
+    }
+    .DiscussionListItem-badges {
+    float: right;
+    margin-top: 12px;
+    position: relative;
+    right: 0px;
+    }
+    .paneShowing .DiscussionListItem-badges {
+    right: 0px;
+    }
+    .paneShowing .DiscussionListItem-title {
+    margin-right: 40px;
+    }
+    .DiscussionListItem-info .item-tags, .UserPage .DiscussionListItem-info .item-tags {
+    position: static !important;
+    }
+    }
+    /* Mobile */
+    @media (max-width: 767px){
+    .PostUser-badges {
+    position: static;
+    margin-left: 15px;
+    width: auto !important;
+    }
+    .DiscussionListItem-badges {
+    float: right;
+    margin-top: 12px;
+    position: relative;
+    right: -8px;
+    }
+    .DiscussionListItem-title {
+    margin-right: 40px;
+    }
+    }
+    
+    /* Common */
+    .PostUser-badges .Badge {
+    margin-left: -5px;
+    }
+    .DiscussionListItem-badges .Badge {
+    margin-left: -5px;
+    }

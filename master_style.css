@@ -1,0 +1,219 @@
+/* Animated online indicator post and profile */
+
+/* Online icon (fa-circle) */
+.UserCard-lastSeen.online .fa-circle,
+.PostUser .UserOnline .fa-circle {
+  color: var(--online-user-circle-color);
+  position: relative;
+}
+
+/* Pulse */
+.UserCard-lastSeen.online .fa-circle::after,
+.PostUser .UserOnline .fa-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  background-color: var(--online-user-circle-color);
+  box-shadow: 0 0 0 0 var(--online-user-circle-color);
+  animation: Flarum-Online-Pulse 3s infinite ease-out;
+}
+
+/* Animate pulse */
+@keyframes Flarum-Online-Pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 200, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 0, 0);
+  }
+}
+
+/* Afrox online user list animation */
+
+.Afrux-OnlineUsersWidget-users-item::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  margin-top: -1px;
+  margin-left: -35px;
+  border-radius: 50%;
+  background-color: var(--online-user-circle-color);
+
+  /* initial alone */
+  box-shadow: 0 0 0 0 var(--online-user-circle-color);
+  animation: Flarum-Online-Dot 3s infinite ease-out;
+}
+
+@keyframes Flarum-Online-Dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(0, 200, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 0, 0);
+  }
+}
+
+
+.DiscussionList-update {
+--button-color: var(--button-primary-color) !important;
+--button-bg: var(--button-primary-bg) !important;
+--button-bg-hover: var(--button-primary-bg-hover) !important;
+--button-bg-active: var(--button-primary-bg-active) !important;
+--button-bg-disabled: var(--button-primary-bg-disabled) !important;
+}
+
+/* Group Badges */
+/* Desktop */
+@media (min-width: 768px) {
+.PostUser-badges {
+float: none;
+position: relative;
+margin-left: 15px;
+width: auto;
+}
+.DiscussionListItem-badges {
+float: right;
+margin-top: 12px;
+position: relative;
+right: 0px;
+}
+.paneShowing .DiscussionListItem-badges {
+right: 0px;
+}
+.paneShowing .DiscussionListItem-title {
+margin-right: 40px;
+}
+.DiscussionListItem-info .item-tags, .UserPage .DiscussionListItem-info .item-tags {
+position: static !important;
+}
+}
+/* Mobile */
+@media (max-width: 767px){
+.PostUser-badges {
+position: static;
+margin-left: 15px;
+width: auto !important;
+}
+.DiscussionListItem-badges {
+float: right;
+margin-top: 12px;
+position: relative;
+right: -8px;
+}
+.DiscussionListItem-title {
+margin-right: 40px;
+}
+}
+
+/* Common */
+.PostUser-badges .Badge {
+margin-left: -5px;
+}
+.DiscussionListItem-badges .Badge {
+margin-left: -5px;
+}
+
+/*Neatly Display "Tags & Reply" counter on Flarum by Wellwisher - START*/
+@media (min-width: 768px) {
+  .IndexPage .DiscussionListItem-info > .item-tags, 
+  .UserPage .DiscussionListItem-info > .item-tags {
+    left:78%!important;
+    max-width: 250px!important;
+    overflow: visible !important;
+    transition: max-width .2s ease-in-out,-webkit-mask-image .2s!important;
+  }
+  .DiscussionListItem-count {
+    margin: 12px 200px 0 0!important;
+    padding-left: 21px!important;
+    position: absolute!important;
+    left:71%!important;
+  }
+  .TagsLabel {
+    z-index: 2!important;
+    position: relative!important;
+  } 
+  .IndexPage .DiscussionListItem-info>.item-tags, .UserPage .DiscussionListItem-info>.item-tags {
+    right:-100px!important;
+   -webkit-mask-image: linear-gradient(to right, #000 195px, rgba(0,0,0,0) 210px)!important;  
+}
+}
+/*Neatly Display "Tags & Reply" counter on Flarum by Wellwisher - END*/
+
+/* --- NEON CHAT STYLE OVERRIDES --- */
+
+/* 1. Customize the Launcher Button (The Bubble) */
+div.button-fixed-maximize {
+    /* Match your site's primary button colors */
+    background-color: #121212 !important;
+    color: var(--button-color, #ffffff) !important;
+
+    /* Ensure it is a perfect circle for the pulse to work */
+    border-radius: 50% !important;
+    width: 50px !important;  /* Adjust size if needed */
+    height: 50px !important;
+    
+    /* Center the new icon */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    
+    /* Remove any default borders/shadows that might clash */
+    border: none !important;
+}
+
+div.button-fixed-maximize:hover {
+  background-color: #566777 !important;
+}
+
+/* 2. Change the Icon (Replace the default Cloud) */
+/* We target the <i> tag inside the button and swap its content */
+.button-fixed-maximize i::before {
+    /* \f086 is the FontAwesome code for a "Comment" bubble. 
+       \f0e7 = Lightning Bolt
+       \f075 = Comment-alt 
+       \f007 = User 
+    */
+    content: "\f4ad" !important; 
+    
+    /* Optional: Adjust icon size */
+    font-size: 20px;
+}
+
+
+/* 4. Match the Chat Window Header to your Button Style */
+.ChatHeader {
+    background-color: var(--button-bg, #445599) !important;
+}
+
+div.ChatList {
+    background-color: #e4e4e4 !important;
+}
+
+.ChatList .header {
+    background-color: #828282 !important;
+}
+
+
+
+div.ChatHeader h2 {
+    color: #121212 !important;
+    max-width: 500px !important;
+}
+
+/* Optional: Move the unread counter slightly so it doesn't cover the icon */
+.button-fixed-maximize .unreaded {
+    top: -5px !important;
+    right: -5px !important;
+    background-color: #ff4444; /* Force red for visibility */
+}
